@@ -10,15 +10,14 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('https://via.placeholder.com/1600x900?text=Chicken+Jockey+Background'); /* Replace with your chicken jockey background image */
+            background-image: url('https://www.wallpaperflare.com/static/858/718/988/molten-lava-volcano-flow-wallpaper.jpg'); /* Lava Background */
             background-size: cover;
             background-position: center;
-            color: #333;
+            color: white;
         }
 
         header {
-            background-color: rgba(255, 187, 51, 0.8); /* semi-transparent background */
-            color: white;
+            background-color: rgba(255, 87, 34, 0.7); /* semi-transparent background */
             padding: 20px;
             text-align: center;
         }
@@ -29,7 +28,7 @@
 
         /* Navigation */
         nav {
-            background-color: #FF9800;
+            background-color: rgba(255, 165, 0, 0.8);
             padding: 15px;
             text-align: center;
         }
@@ -37,7 +36,7 @@
         nav button {
             background-color: #FF5722;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 20px;
             border: none;
             margin: 10px;
             font-size: 18px;
@@ -61,18 +60,17 @@
             color: #FF5722;
         }
 
-        /* Video Section */
-        #video-section {
-            margin-top: 30px;
-            background-color: rgba(255, 235, 59, 0.8); /* semi-transparent yellow */
+        /* Game Section */
+        #game-section {
+            background-color: rgba(0, 0, 0, 0.6);
             padding: 20px;
+            margin-top: 30px;
             border-radius: 8px;
         }
 
-        #video-section iframe {
-            width: 80%;
-            height: 400px;
-            border-radius: 8px;
+        #game-score {
+            font-size: 2em;
+            color: #FFEB3B;
         }
 
         /* Gallery Section */
@@ -98,7 +96,7 @@
 
         /* Footer Section */
         footer {
-            background-color: #FF9800;
+            background-color: rgba(255, 87, 34, 0.7);
             color: white;
             padding: 20px;
             text-align: center;
@@ -109,11 +107,7 @@
         @media (max-width: 768px) {
             nav button {
                 font-size: 16px;
-                padding: 8px 16px;
-            }
-
-            #video-section iframe {
-                width: 100%;
+                padding: 10px 16px;
             }
 
             #gallery-section {
@@ -144,11 +138,21 @@
             <p>Experience the thrill of Chicken Jockey races and games. Here you'll find all things chicken jockey – from exciting game info to hilarious videos and a fun gallery!</p>
         </section>
 
+        <!-- Games Section (Clicker Game) -->
+        <section id="games" style="display:none;">
+            <div class="section-title">Chicken Jockey Clicker Game</div>
+            <div id="game-section">
+                <p>Click on the chicken jockey to score points!</p>
+                <button onclick="incrementScore()">Click Me!</button>
+                <div id="game-score">Score: 0</div>
+            </div>
+        </section>
+
         <!-- Video Section -->
         <section id="videos" style="display:none;">
             <div class="section-title">Top Chicken Jockey Video</div>
             <div id="video-section">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen width="80%" height="400"></iframe>
             </div>
         </section>
 
@@ -180,9 +184,20 @@
             document.getElementById(page).style.display = 'block';
         }
 
+        // Function to handle the clicker game score
+        let score = 0;
+        function incrementScore() {
+            score += 1;
+            document.getElementById('game-score').innerText = "Score: " + score;
+        }
+
         // Initial content load
         navigateTo('home');
     </script>
+    
+</body>
+</html>
+
     
 </body>
 </html>
